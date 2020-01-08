@@ -60,6 +60,7 @@
 * 설치 : 
   - Ubuntu : `sudo apt-get install -y iftop`
   - macOS : `brew install iftop`
+  - Windows : 
 * 사용법 : 
   - 실행 : `iftop` 
   - macOS의 경우 관리자 권한 필요 : `sudo iftop`
