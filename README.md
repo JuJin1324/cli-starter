@@ -4,20 +4,20 @@
 ## 네트워크 관련 명령어
 ### ssh server
 * 설치 
- - Ubuntu : `sudo apt-get install -y openssh-server`
- - Windows : `scoop install openssh-server`
- - macOS : 선탑재
+  - Ubuntu : `sudo apt-get install -y openssh-server`
+  - Windows : `scoop install openssh-server`
+  - macOS : 선탑재
 * 설정
- - 위치 : /etc/ssh
- - ssh_host_res_key : 해당 리눅스 접속을 위한 프라이빗 키
- - sshd_config : ssh 접근을 위한 config 파일, 변경 이후 `service ssh restart`로 재시작한다.
+  - 위치 : /etc/ssh
+  - ssh_host_res_key : 해당 리눅스 접속을 위한 프라이빗 키
+  - sshd_config : ssh 접근을 위한 config 파일, 변경 이후 `service ssh restart`로 재시작한다.
 * 참고사이트 : [링크](http://programmingskills.net/archives/315)
 
 ### netcat
 * 설치 
- - Ubuntu : 선탑재
- - macOS : `brew install netcat`
- - Windows : `scoop install netcat`
+  - Ubuntu : 선탑재
+  - macOS : `brew install netcat`
+  - Windows : `scoop install netcat`
 * 사용법 
     - 1. 외부 서버에 특정 포트로 접속이 가능한지 확인 : `nc -z [외부 서버 주소] [포트]`
     - 예시(123.456.789.101 서버 mysql(3306포트) 접속 가능한지 테스트) : $ `nc -z 123.456.789.101 3306`
@@ -28,9 +28,9 @@
 ### ngrok
 * 설명 : 외부망에서 tcp 접속할 수 있도록 지정 포트를 ngrok에서 제공해주는 도메인 및 포트에 바인딩해준다.
 * 설치
- - Ubuntu : `snap install ngrok`
- - macOS : `brew install ngrok`
- - Windows : `scoop install ngrok`
+  - Ubuntu : `snap install ngrok`
+  - macOS : `brew install ngrok`
+  - Windows : `scoop install ngrok`
 * 공식 사이트 : [링크](https://ngrok.com)
 * 주의 : 회원가입 필요(무료)
 * 사용법 : `ngrok tcp [지정 포트]`
@@ -45,9 +45,9 @@
 ### netstat
 * 설명 : 리눅스 서버에 현재 열려 있는 포트 확인
 * 설치
- - Ubuntu : `sudo apt-get install -y net-tools`
- - macOS : 선탑재
- - Windows : 선탑재
+  - Ubuntu : `sudo apt-get install -y net-tools`
+  - macOS : 선탑재
+  - Windows : 선탑재
 * n:host명으로 표시 안함
 * a:모든소켓 표시
 * p:프로세스ID와 프로그램명 표시
