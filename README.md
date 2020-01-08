@@ -76,9 +76,9 @@
 ### traceroute
 * 설명 : 서버 접속 가능 및 경로 파악
 * 설치
- - Ubuntu : `sudo apt-get install -y traceroute`
- - macOS : 선탑재
- - Windows : 윈도우는 tracert 사용
+  - Ubuntu : `sudo apt-get install -y traceroute`
+  - macOS : 선탑재
+  - Windows : 윈도우는 tracert 사용
 * 사용법 : `traceroute -p [포트] [서버 IP 혹은 도메인] -T`
 
 ### tracert
