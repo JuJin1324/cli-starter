@@ -86,3 +86,8 @@
 * 설치
   - Windows : 선탑재
 * 사용법 : `tracert -p [포트] [서버 IP 혹은 도메인] -T`
+
+### Httpie
+* 설명: 터미널에서 웹 페이지 요청 및 응답에 대한 Header 및 Body 정보를 모두 표시
+* 설치
+  - macOS : `brew install httpie`
