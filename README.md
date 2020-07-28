@@ -92,3 +92,5 @@
 * 공식 페이지: [HTTPie](https://httpie.org/)
 * 설치
   - macOS : `brew install httpie`
+* 사용법: `http GET localhost:8080`
+
