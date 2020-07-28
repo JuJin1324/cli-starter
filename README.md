@@ -89,5 +89,6 @@
 
 ### Httpie
 * 설명: 터미널에서 웹 페이지 요청 및 응답에 대한 Header 및 Body 정보를 모두 표시
+* 공식 페이지: [HTTPie](https://httpie.org/)
 * 설치
   - macOS : `brew install httpie`
