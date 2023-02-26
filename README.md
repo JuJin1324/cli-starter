@@ -32,6 +32,14 @@
 > 설치  
 > Ubuntu: `apt install -y ranger`  
 > masOS: `brew install ranger`  
+> 
+> 사용법  
+> `r`: open with command  
+> `y`: copy  
+> `p`: paste  
+> `d`: cut/delete  
+> `u`: undo  
+> `q`: quit  
 
 ### mycli
 > 설명  
