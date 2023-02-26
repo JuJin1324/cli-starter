@@ -57,6 +57,14 @@
 > Ubuntu: `apt install -y htop`  
 > macOS: `brew install htop`
 
+### glances
+> 설명  
+> htop 보다 조금 더 많고 자세한 정보들을 보여줌.  
+> 
+> 설치  
+> Ubuntu: `apt install -y glances`  
+> macOS: `brew install glances`  
+
 ---
 
 ## 네트워크 관련 명령어
