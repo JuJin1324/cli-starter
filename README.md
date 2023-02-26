@@ -7,8 +7,8 @@
 > watch 명령은 원하는 명령어의 결과를 원하는 시간(초) 주기로 리프레시 하여 결과를 보여주는 명령어 입니다.  
 > 
 > 설치  
-> Ubuntu : 선탑재   
-> macOS : `brew install watch`  
+> Ubuntu: 선탑재   
+> macOS: `brew install watch`  
 > 
 > Arguments
 > -n <seconds>: 새로고침 시간(default 2초)  
@@ -16,6 +16,40 @@
 > 
 > 사용 예시  
 > 현재 시간 값을 화면에 1초마다 업데이트로 출력: `watch -n 1 'date'`  
+
+### bat
+> 설명  
+> cat 대신 사용. syntax highlighting 해줌.
+> 
+> 설치  
+> Ubuntu: `apt install -y bat`  
+> macOS: `brew install bat`  
+
+### ranger
+> 설명  
+> file explorer for linux   
+> 
+> 설치  
+> Ubuntu: `apt install -y ranger`  
+> masOS: `brew install ranger`  
+
+### mycli
+> 설명  
+> 자동완성 기능이 있는 MySQL 및 MariaDB 클라이언트   
+> 
+> 설치  
+> Ubuntu: `apt install -y mycli`  
+> macOS: `brew install mycli`
+
+### htop
+> 설명  
+> top 대용. CPU 및 Memory 사용량 체크가 top 보다 훨씬 직관적임.  
+> 
+> 설치  
+> Ubuntu: `apt install -y htop`  
+> macOS: `brew install htop`
+
+---
 
 ## 네트워크 관련 명령어
 ### wrk 
