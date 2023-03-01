@@ -2,6 +2,19 @@
 > 운영체제 상관없이 사용가능한 CLI(Command Line Interface) 명령어 사용 정리
 
 ## 유틸리티  
+### cpufetch
+> 설명  
+> cpufetch 명령은 서버의 CPU 정보를 리포트해주는 명령어 입니다.  
+> 
+> 설치  
+> Ubuntu: 
+> ```shell 
+> sudo apt update
+> sudo apt install -y snapd
+> sudo snap install cpufetch
+> ```
+> macOS: `brew install cpufetch`  
+
 ### watch  
 > 설명  
 > watch 명령은 원하는 명령어의 결과를 원하는 시간(초) 주기로 리프레시 하여 결과를 보여주는 명령어 입니다.  
