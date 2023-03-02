@@ -2,9 +2,25 @@
 > 운영체제 상관없이 사용가능한 CLI(Command Line Interface) 명령어 사용 정리
 
 ## 유틸리티  
+### smartmontools
+> 설명   
+> ssd 스펙 및 상태 정보 리포트 해주는 명령어 입니다.
+> 
+> 설치  
+> Ubuntu: `sudo apt install -y smartmontools`    
+> macOS: `brew install smartmontools`
+> 
+> 사용 예시 - Ubuntu  
+> 디스크 목록 보기: `sudo lsblk`  
+> 디스크 정보 보기: `sudo smartctrl -a /dev/sda`   
+> 
+> 사용 예시 - macOS  
+> 디스크 목록 보기: `diskutil list`  
+> 디스크 정보 보기: `smartctl -a /dev/disk0`    
+
 ### cpufetch
 > 설명  
-> cpufetch 명령은 서버의 CPU 정보를 리포트해주는 명령어 입니다.  
+> cpufetch 명령은 서버의 CPU 정보를 리포트 해주는 명령어 입니다.  
 > 
 > 설치  
 > Ubuntu: 
@@ -35,7 +51,7 @@
 > cat 대신 사용. syntax highlighting 해줌.
 > 
 > 설치  
-> Ubuntu: `apt install -y bat`  
+> Ubuntu: `sudo apt install -y bat`  
 > macOS: `brew install bat`  
 
 ### ranger
