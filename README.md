@@ -12,7 +12,7 @@
 > 
 > 사용 예시 - Ubuntu  
 > 디스크 목록 보기: `sudo lsblk`  
-> 디스크 정보 보기: `sudo smartctrl -a /dev/sda`   
+> 디스크 정보 보기: `sudo smartctl -a /dev/sda`   
 > 
 > 사용 예시 - macOS  
 > 디스크 목록 보기: `diskutil list`  
