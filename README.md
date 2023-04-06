@@ -47,7 +47,7 @@
 > 현재 시간 값을 화면에 1초마다 업데이트로 출력: `watch -n 1 'date'`  
 
 ### bat
-> 설명  
+> **설명**  
 > cat 대신 사용. syntax highlighting 해줌.
 > 
 > 설치  
@@ -55,14 +55,14 @@
 > macOS: `brew install bat`  
 
 ### ranger
-> 설명  
+> **설명**  
 > file explorer for linux   
 > 
-> 설치  
+> **설치**  
 > Ubuntu: `apt install -y ranger`  
 > masOS: `brew install ranger`  
 > 
-> 사용법  
+> **사용법**  
 > `r`: open with command  
 > `y`: copy  
 > `p`: paste  
@@ -71,28 +71,53 @@
 > `q`: quit  
 
 ### mycli
-> 설명  
+> **설명**  
 > 자동완성 기능이 있는 MySQL 및 MariaDB 클라이언트   
 > 
-> 설치  
+> **설치**  
 > Ubuntu: `apt install -y mycli`  
 > macOS: `brew install mycli`
 
 ### htop
-> 설명  
+> **설명**  
 > top 대용. CPU 및 Memory 사용량 체크가 top 보다 훨씬 직관적임.  
 > 
-> 설치  
+> **설치**  
 > Ubuntu: `apt install -y htop`  
 > macOS: `brew install htop`
 
 ### glances
-> 설명  
+> **설명**  
 > htop 보다 조금 더 많고 자세한 정보들을 보여줌.  
 > 
-> 설치  
+> **설치**  
 > Ubuntu: `apt install -y glances`  
 > macOS: `brew install glances`  
+
+### base64
+> **설명**  
+> 리눅스용 base64 인코딩/디코딩 도구  
+> 
+> **설치**  
+> Ubuntu: 내장   
+> macOS: 내장  
+> 
+> **사용법**
+> base64 인코딩(\n 미포함): `echo -n '<인코딩할 문자열>' | base64`  
+> base64 인코딩(\n 포함): `echo '<인코딩할 문자열>' | base64`  
+> base64 디코딩: `echo '<Base64 인코딩된 문자열>' | base64 --decode`  
+> 
+> 파일 인코딩
+> ```shell
+> echo hello > 1.txt
+> base64 -i 1.txt
+> ```
+> 
+> 파일 디코딩
+> ```shell
+> echo aGVsbG8K > 2.txt
+> base64 -d -i 2.txt
+> ```
 
 ---
 
