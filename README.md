@@ -135,6 +135,9 @@
 > -d <t>: Duration(부하 지속시간)  
 > -t <n>: Thread 갯수(동시 접속 갯수)
 > 
+> **예시**  
+> `wrk -c 10 -d 10000 -t 10 https://api.test.com/v1/users`  
+> 
 > 참고사이트: [wrk - 모던 웹 성능 측정 도구(Modern HTTP bench marking tool)](https://www.lesstif.com/software-architect/wrk-modern-http-bench-marking-tool-106856711.html)
 
 ### OpenSSH Server
@@ -187,7 +190,7 @@
 > 예시 : `ngrok tcp 4321`  
 
 ### nslookup
-> **설명** 
+> **설명**   
 > 특정 도메인에 맵핑된 IP 확인
 >
 > Ubuntu : 선탑재   
@@ -228,7 +231,7 @@
 > **사용법**   
 > 실행 : `iftop`   
 > macOS의 경우 관리자 권한 필요 : `sudo iftop -i en0`    
-> 
+> gh 
 > **정보**   
 > TX : 전송  
 > RX : 수신  
