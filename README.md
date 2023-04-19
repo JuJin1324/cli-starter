@@ -266,3 +266,67 @@
 > macOS : `brew install httpie`  
 > 사용법: `http GET localhost:8080`  
 
+---
+
+## 서비스
+### Executable-Jar 서비스 등록
+> **서비스 파일 생성**  
+> 생성 위치: `/etc/systemd/system`  
+> 생성 파일: `<서비스 파일 명>.service`  
+> 내용
+> ```shell
+> cd /etc/systemd/system
+> sudo vi cli-starter.service
+> 
+> [Unit]
+> Description=Service description
+> After=mysql.service docker.service
+> 
+> [Service]
+> User=ec2-user
+> Group=ec2-user
+> WorkingDirectory=/home/ec2-user/cli-starter
+> ExecStart=/bin/bash -c "exec java -Dspring.profiles.active=dev -jar cli-starter-0.0.1-SNAPSHOT.jar"
+> Restart=on-failure
+> RestartSec=10
+> 
+> [Install]
+> WantedBy=multi-user.target
+> 
+> :wq
+> ```
+> Description: 서비스에 대한 설명  
+> After: 서비스가 언제 실행될 것인지 설정하는 부분. mysql이 구동된 이후 시작  
+> User, Group: 서비스 실행을 위한 권한  
+> WorkingDirectory: 서비스가 바라보는 작업 디렉터리 경로. WorkingDirectory 를 Executable-Jar 파일이 위치한 경로로 설정하면 
+> ExecStart 에서 Jar 파일의 풀 경로를 적을 필요없이 Jar 파일의 이름만 명시하면 된다.    
+> 
+> ExecStart: jar파일을 절대 경로로 작성  
+> Restart: 'on-failure'는 서비스를 실행시키는데 실패하면 다시 시작시키겠다는 의미의 설정이다.
+> RestartSec: 서비스를 다시 시작하기 전에 몇 초동안 잠시 기다릴지에 대한 설정이다.  
+> WantedBy: 서비스 run level을 설정하는 부분이다. 'multi-user.target'로 설정하면 다중 사용자로 설정된다.  
+> 
+> **서비스 등록**  
+> ```shell
+> # 서비스 파일 등록
+> sudo systemctl daemon-reload
+> 
+> # 서비스 등록
+> sudo systemctl enable cli-starter.service
+> 
+> # 서비스 재시작
+> sudo systemctl restart cli-starter.service
+> ```
+> 
+> **서비스 확인**  
+> ```shell
+> # 구동되는 서비스 목록 조회
+> sudo systemctl -t service list-unit-flies | grep cli-starter.service
+> 
+> # 서비스 실행 상태 확인
+> sudo systemctl status cli-starter.service
+> ```
+
+### 참조사이트
+> [[AWS] Ubuntu Spring Boot jar 서비스 등록](https://garve32.tistory.com/65)  
+> [Linux에서 SpringBoot jar 파일 서비스 등록해 자동실행 되게 하기(+ 서비스 관련 기본 명령어들)](https://pamyferret.tistory.com/16)  
