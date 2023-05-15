@@ -212,7 +212,7 @@
 > -t <n>: Thread 갯수(동시 접속 갯수)
 > 
 > **예시**  
-> `wrk -c 10 -d 10000 -t 10 https://api.test.com/v1/users`  
+> `wrk -c10 -d10000 -t10 https://api.test.com/v1/users`  
 > 
 > 참고사이트: [wrk - 모던 웹 성능 측정 도구(Modern HTTP bench marking tool)](https://www.lesstif.com/software-architect/wrk-modern-http-bench-marking-tool-106856711.html)
 
