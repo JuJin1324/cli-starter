@@ -304,21 +304,48 @@
 ### Executable-Jar 서비스 등록
 > **서비스 파일 생성**  
 > 생성 위치: `/etc/systemd/system`  
-> 생성 파일: `<서비스 파일 명>.service`  
-> 내용
+> 생성 파일: `<서비스 파일 명>.service`
+> service 에서 Jar 를 실행시키는 bash script 를 실행하는 경우
 > ```shell
 > cd /etc/systemd/system
 > sudo vi cli-starter.service
 > 
 > [Unit]
 > Description=Service description
-> After=mysql.service docker.service
+> After=syslog.target network.target
 > 
 > [Service]
+> Type=forking
+> User=ec2-user
+> Group=ec2-user
+> WorkingDirectory=/home/ec2-user/cli-starter
+> ExecStart=/bin/bash start.sh
+> ExecStop=/bin/kill -15 $MAINPID
+> Restart=on-failure
+> RestartSec=10
+> 
+> [Install]
+> WantedBy=multi-user.target
+> 
+> :wq 
+> ```
+> 
+> service 에서 직접 Jar 를 실행하는 경우
+> ```shell
+> cd /etc/systemd/system
+> sudo vi cli-starter.service
+> 
+> [Unit]
+> Description=Service description
+> After=syslog.target network.target
+> 
+> [Service]
+> Type=simple
 > User=ec2-user
 > Group=ec2-user
 > WorkingDirectory=/home/ec2-user/cli-starter
 > ExecStart=/bin/bash -c "exec java -Dspring.profiles.active=dev -jar cli-starter-0.0.1-SNAPSHOT.jar"
+> ExecStop=/bin/kill -15 $MAINPID
 > Restart=on-failure
 > RestartSec=10
 > 
@@ -328,7 +355,9 @@
 > :wq
 > ```
 > Description: 서비스에 대한 설명  
-> After: 서비스가 언제 실행될 것인지 설정하는 부분. mysql이 구동된 이후 시작  
+> After: 서비스가 언제 실행될 것인지 설정하는 부분. mysql이 구동된 이후 시작
+> 
+> Type: `simple`: Jar 파일을 직접 실행할 때 simple, `forking`: bash script 를 통해서 Jar 파일을 실행할 때는 forking 사용.   
 > User, Group: 서비스 실행을 위한 권한  
 > WorkingDirectory: 서비스가 바라보는 작업 디렉터리 경로. WorkingDirectory 를 Executable-Jar 파일이 위치한 경로로 설정하면 
 > ExecStart 에서 Jar 파일의 풀 경로를 적을 필요없이 Jar 파일의 이름만 명시하면 된다.    
@@ -362,3 +391,4 @@
 ### 참조사이트
 > [[AWS] Ubuntu Spring Boot jar 서비스 등록](https://garve32.tistory.com/65)  
 > [Linux에서 SpringBoot jar 파일 서비스 등록해 자동실행 되게 하기(+ 서비스 관련 기본 명령어들)](https://pamyferret.tistory.com/16)  
+> [Run a Java Application as a Service on Linux](https://www.baeldung.com/linux/run-java-application-as-service)
