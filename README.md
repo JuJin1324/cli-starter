@@ -399,14 +399,14 @@
 > :wq
 > ```
 > Description: 서비스에 대한 설명  
-> After: 서비스가 언제 실행될 것인지 설정하는 부분. mysql이 구동된 이후 시작
+> After: 서비스가 언제 실행될 것인지 설정하는 부분. 위의 예시에서는 네트워크가 잡힌 후 시작.
 > 
 > Type: `simple`: Jar 파일을 직접 실행할 때 simple, `forking`: bash script 를 통해서 Jar 파일을 실행할 때는 forking 사용.   
 > User, Group: 서비스 실행을 위한 권한  
 > WorkingDirectory: 서비스가 바라보는 작업 디렉터리 경로. WorkingDirectory 를 Executable-Jar 파일이 위치한 경로로 설정하면 
 > ExecStart 에서 Jar 파일의 풀 경로를 적을 필요없이 Jar 파일의 이름만 명시하면 된다.    
 > 
-> ExecStart: jar파일을 절대 경로로 작성  
+> ExecStart: jar 파일을 절대 경로로 작성. WorkingDirectory 를 위에서 설정한 경우에는 경로를 적어줄 필요없음.    
 > Restart: 'on-failure'는 서비스를 실행시키는데 실패하면 다시 시작시키겠다는 의미의 설정이다.  
 > RestartSec: 서비스를 다시 시작하기 전에 몇 초동안 잠시 기다릴지에 대한 설정이다.  
 > WantedBy: 서비스 run level을 설정하는 부분이다. 'multi-user.target'로 설정하면 다중 사용자로 설정된다.  
